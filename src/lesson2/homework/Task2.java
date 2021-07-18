@@ -51,7 +51,6 @@ public class Task2 {
                 System.out.println(array[minIndex]);
             }
         }
-        System.out.println();
     }                                                                           // p.s. говнокод конечно, т.к. алгоритм корявый, но работает и я старался :)
 }
 
