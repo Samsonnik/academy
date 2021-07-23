@@ -13,8 +13,6 @@ public class Task0 {
         int[] array = makeArray(arraySize);
         System.out.println(Arrays.toString(array));
         pairs(array, targetValue);
-//        int[] array2 = {1, 5, 3, 4, 2};         // example from task
-//        pairs(array2, 2);                      // example from task
         scanner.close();
     }
 
