@@ -23,14 +23,14 @@ public class Task2 {
                 numberOfLines--;
             }
         }
-        String lines = stringBuilder.toString();                                 // преобразовываем StringBuilder в строку
-        String[] array = lines.split(" ");                                 // а затем разбиваем его на массив по разделителю " "
+        String lines = stringBuilder.toString();
+        String[] array = lines.split(" ");
 
         int count = 0;
         ArrayList<Integer> countValues = new ArrayList<Integer>();
 
-        for (String word : array) {                                             // находим количество повторяющихся букв в словах при помощи
-            count = 0;                                                          // счетчика count и для удобства заносим данные в ArrList countValues
+        for (String word : array) {
+            count = 0;
             for (int i = 0; i < word.length(); i++) {
                 char a = word.charAt(i);
                 for (int j = i + 1; j < word.length(); j++) {
@@ -40,10 +40,10 @@ public class Task2 {
             }
             countValues.add(count);
         }
-        int maxIndex = 0;                                                      // находим индекс счетчика повторяющихся букв в словах с минимальным значением
-        for (int i = 0; i < countValues.size(); i++) {                         // и т.к. индекс счетчика соответствует индексу String массива array
-            if (countValues.get(maxIndex) < countValues.get(i)) {              // достаем необходимое нам слово путем присваивания индекса с минимальным
-                maxIndex = i;                                                  // значением String массиву array
+        int maxIndex = 0;
+        for (int i = 0; i < countValues.size(); i++) {
+            if (countValues.get(maxIndex) < countValues.get(i)) {
+                maxIndex = i;
             }
         }
         System.out.println(array[maxIndex]);
