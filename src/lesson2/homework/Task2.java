@@ -47,5 +47,7 @@ public class Task2 {
             }
         }
         System.out.println(array[maxIndex]);
+        scanner.close();
+        scanner2.close();
         }
     }

@@ -16,6 +16,9 @@ public class Task3 {
             String word = stringBuilder.toString();
             System.out.println(word);
         }
-        else System.out.println("Something wet wrong");
+        else {
+            System.out.println("Something wet wrong");
+        }
+        scanner.close();
     }
 }

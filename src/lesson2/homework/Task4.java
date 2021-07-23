@@ -27,6 +27,7 @@ public class Task4 {
         else {
             System.out.println("Something wet wrong");
         }
+        scanner.close();
     }
 
     public static String[] initializeDeck(){

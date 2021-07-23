@@ -34,7 +34,11 @@ public class Task1 {
         for (char second: secondLineArray){         //consider the difference
             check = check - (int)(second);
         }
-        if (check == 0) return equal;
-        else return notEqual;
+        if (check == 0) {
+            return equal;
+        }
+        else {
+            return notEqual;
+        }
     }
 }
