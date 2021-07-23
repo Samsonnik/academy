@@ -63,7 +63,10 @@ public class Task4 {
         for (int i = 0; i < numberOfPlayers * valueCardsForOne; i++) {
             System.out.print(mixedDeck[i] + " ");
             count++;
-            if (count % 5 == 0) System.out.println();
+            if (count % valueCardsForOne == 0) {
+                System.out.println();
+                System.out.println();
+            }
         }
     }
 }
