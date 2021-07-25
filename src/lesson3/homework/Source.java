@@ -23,6 +23,10 @@ public class Source {
 
         DateValidator.dataCheck("12/05/2021");
         DateValidator.dataCheck("12-07-2023");
+        System.out.println(new AmericanPhoneValidator().validate("+1-123-123-4567"));
+        System.out.println(new BelarusPhoneValidator().validate("+375443277671"));
+        System.out.println(new EmailValidator().validate("abcmail.com"));
+
 
 
 
