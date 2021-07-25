@@ -1,6 +1,7 @@
 package lesson3.homework;
 
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -18,14 +19,21 @@ public class Source {
         products.add(firstPC);
         products.add(firstPhone);
 
-        User seller = new User("Vasyan", 100_000);
-        User buyer = new User("Igoryan", 50_000);
+        User seller = new User("Vasyan", 100_000, "+375-29-32-77621", "vasua123@mail.ru", "12-07-1997");
+        User buyer = new User("Igoryan", 50_000, "+1-298-123-4567", "igorekugolek@yahoo.com", "12/08/2020");
 
-        DateValidator.dataCheck("12/05/2021");
-        DateValidator.dataCheck("12-07-2023");
-        System.out.println(new AmericanPhoneValidator().validate("+1-123-123-4567"));
-        System.out.println(new BelarusPhoneValidator().validate("+375443277671"));
-        System.out.println(new EmailValidator().validate("abcmail.com"));
+        System.out.println(new BelarusPhoneValidator().validate(seller.getPhone()));
+        System.out.println(new EmailValidator().validate(seller.getEmail()));
+        System.out.println(new AmericanPhoneValidator().validate(buyer.getPhone()));
+        System.out.println(new EmailValidator().validate(buyer.getEmail()));
+        new DateValidator().validate(seller.getDateOfBirth());
+        new DateValidator().validate(buyer.getDateOfBirth());
+
+        LocalDate dealDate = LocalDate.now();
+        Deal deal = new Deal(products, seller, buyer, dealDate);
+        System.out.println(deal.getDealDate());
+        System.out.println(deal.getDealDeadLine());
+        System.out.println(deal.getFullPrice(products));
 
 
 

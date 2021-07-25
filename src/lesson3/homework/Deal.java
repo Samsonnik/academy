@@ -1,18 +1,18 @@
 package lesson3.homework;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Objects;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.*;
 
 public class Deal {
 
     private ArrayList<Product> products;
     private User seller;
     private User buyer;
-    private Date dealDate;
+    private LocalDate dealDate;
+    private LocalDate dealDeadLine;
 
-    public Deal(ArrayList<Product> products, User seller, User buyer, Date dealDate) {
+    public Deal(ArrayList<Product> products, User seller, User buyer, LocalDate dealDate) {
         this.products = products;
         this.seller = seller;
         this.buyer = buyer;
@@ -20,6 +20,19 @@ public class Deal {
     }
 
     public Deal() {
+    }
+
+    public LocalDate getDealDeadLine(){
+        dealDeadLine = dealDate;
+        return dealDeadLine.plusDays(10);
+    }
+
+    public double getFullPrice(ArrayList<Product> products){
+        double fullPrice = 0;
+        for (Product product : products) {
+            fullPrice += product.averagePrice();
+        }
+        return fullPrice;
     }
 
     public ArrayList<Product> getProducts() {
@@ -46,20 +59,12 @@ public class Deal {
         this.buyer = buyer;
     }
 
-    public Date getDealDate() {
+    public LocalDate getDealDate() {
         return dealDate;
     }
 
-    public void setDealDate(Date dealDate) {
+    public void setDealDate(LocalDate dealDate) {
         this.dealDate = dealDate;
-    }
-
-    public double getFullPrice(ArrayList<Product> products){
-        double fullPrice = 0;
-        for (int i = 0; i < products.size(); i++) {
-            fullPrice += products.get(i).averagePrice();
-        }
-        return fullPrice;
     }
 
     @Override
@@ -67,12 +72,12 @@ public class Deal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Deal deal = (Deal) o;
-        return Objects.equals(products, deal.products) && Objects.equals(seller, deal.seller) && Objects.equals(buyer, deal.buyer) && Objects.equals(dealDate, deal.dealDate);
+        return Objects.equals(products, deal.products) && Objects.equals(seller, deal.seller) && Objects.equals(buyer, deal.buyer) && Objects.equals(dealDate, deal.dealDate) && Objects.equals(dealDeadLine, deal.dealDeadLine);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(products, seller, buyer, dealDate);
+        return Objects.hash(products, seller, buyer, dealDate, dealDeadLine);
     }
 
     @Override
@@ -82,6 +87,7 @@ public class Deal {
         sb.append(", seller=").append(seller);
         sb.append(", buyer=").append(buyer);
         sb.append(", dealDate=").append(dealDate);
+        sb.append(", dealDeadLine=").append(dealDeadLine);
         sb.append('}');
         return sb.toString();
     }

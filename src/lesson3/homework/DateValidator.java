@@ -14,7 +14,7 @@ public class DateValidator {
     // date dd-MM-yyyy, where [0-31]/[01-12]/[1990 - 2099]
     private static final Pattern dateType2 = Pattern.compile("^(0[1-9]|[1-2][1-9]|3[0-1])-(0[1-9]|1[1-2])-(199[0-9]|20[0-9][0-9])$");
 
-    public static void dataCheck(String stringDate) throws ParseException {
+    public void validate (String stringDate) throws ParseException {
 
         Matcher matcherDataType1 = dateType1.matcher(stringDate);
         Matcher matcherDataType2 = dateType2.matcher(stringDate);
