@@ -15,6 +15,9 @@ public class Computer extends Product{
         this.graphicsCard = graphicsCard;
     }
 
+    public Computer() {
+    }
+
     public String getProcessor() {
         return processor;
     }

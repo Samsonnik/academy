@@ -47,7 +47,6 @@ public abstract class Product {
         return (1 - discount()) * price * quantity;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

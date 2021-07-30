@@ -15,6 +15,9 @@ public class TV extends Product{
         this.smartTv = smartTv;
     }
 
+    public TV() {
+    }
+
     public String getManufacturer() {
         return manufacturer;
     }

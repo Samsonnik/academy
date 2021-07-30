@@ -15,6 +15,9 @@ public class Phone extends Product{
         this.batteryCapacity = batteryCapacity;
     }
 
+    public Phone() {
+    }
+
     public String getOS() {
         return OS;
     }

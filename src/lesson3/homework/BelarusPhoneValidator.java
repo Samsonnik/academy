@@ -8,7 +8,7 @@ public class BelarusPhoneValidator implements Validator{
 
     @Override
     public boolean validate(String lineForCheck) {
-        Matcher americanPhoneMatcher = belarusPhonePattern.matcher(lineForCheck);
-        return americanPhoneMatcher.matches();
+        Matcher belarusPhoneMatcher = belarusPhonePattern.matcher(lineForCheck);
+        return belarusPhoneMatcher.matches();
     }
 }
