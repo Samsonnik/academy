@@ -18,20 +18,24 @@ public class Source {
         products.add(firstTv);
         products.add(firstPC);
         products.add(firstPhone);
+        BelarusPhoneValidator belarusPhoneValidator = new BelarusPhoneValidator();
+        AmericanPhoneValidator americanPhoneValidator = new AmericanPhoneValidator();
+        EmailValidator emailValidator = new EmailValidator();
 
-        User seller = new User("Vasyan", 100_000, "+375-29-32-77621", "vasua123@mail.ru", "12-07-1997");
-        User buyer = new User("Igoryan", 50_000, "+1-298-123-4567", "igorekugolek@yahoo.com", "12/08/2020");
+        User seller = new User("Vasyan", 120_000, "+375-29-32-77621", "vasua123@mail.ru", "12-07-1997");
+        User buyer = new User("Igoryan", 100_000, "+1-298-123-4567", "ekugolek@yahoo.com", "12/08/1996");
 
         LocalDate dealDate = LocalDate.now();
         Deal deal = new Deal(products, seller, buyer, dealDate);
+
+        DateValidator.validate(seller.getDateOfBirth());
+        DateValidator.validate(buyer.getDateOfBirth());
+        System.out.println(belarusPhoneValidator.validate(seller.getPhone()));
+        System.out.println(americanPhoneValidator.validate(buyer.getPhone()));
+        System.out.println(emailValidator.validate(seller.getEmail()));
+        System.out.println(emailValidator.validate(buyer.getEmail()));
+
         deal.getDealInfo();
-
-
-
-
-
-
-
 
     }
 }

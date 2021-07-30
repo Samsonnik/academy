@@ -48,11 +48,17 @@ public class Deal {
                     product.getQuantity(), product.getPrice(), product.averagePrice());
         }
         System.out.println("_________________________________________________________________________________________");
-        System.out.printf("Deal full price: %-43s%.1f", " ", getFullPrice());
-
+        System.out.printf("Deal full price: %-43s%.1f %n", " ", getFullPrice());
+        stringBuilder.setLength(0);
+        stringBuilder.append("Seller/Buyer inf: ");
+        System.out.println(stringBuilder);
+        System.out.printf("%-15s%-15s%-30s%-23s%-15s%n", "User name", "Money", "Phone", "Email", "Birth date");
+        System.out.println("_________________________________________________________________________________________");
+        System.out.printf("%-15s%-15s%-30s%-23s%-15s%n", seller.getName(), seller.getMoney(), seller.getPhone(), seller.getEmail(), seller.getDateOfBirth());
+        System.out.printf("%-15s%-15s%-30s%-23s%-15s", buyer.getName(), buyer.getMoney(), buyer.getPhone(), buyer.getEmail(), buyer.getDateOfBirth());
     }
 
-    public LocalDate getDealDeadLine(){
+        public LocalDate getDealDeadLine(){
         dealDeadLine = dealDate;
         return dealDeadLine.plusDays(10);
     }
@@ -63,10 +69,6 @@ public class Deal {
             fullPrice += product.averagePrice();
         }
         return fullPrice;
-    }
-
-    public void setProducts(ArrayList<Product> products) {
-        this.products = products;
     }
 
     public User getSeller() {
