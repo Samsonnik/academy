@@ -1,8 +1,11 @@
 package lesson3.homework;
 
-import java.math.BigDecimal;
+import lesson3.homework.annotations.ProductProvider;
+
 import java.util.Objects;
 
+
+@ProductProvider(country = "USA", lifeTime = 5, parts = {"monitor", "mouse", "keyboard", "system unit"})
 public class Computer extends Product{
     private String processor;
     private Integer RAM;

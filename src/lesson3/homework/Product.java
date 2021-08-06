@@ -17,6 +17,11 @@ public abstract class Product {
     public Product() {
     }
 
+    @Deprecated
+    public void test(){
+        System.out.println("This is just a test");
+    }
+
     public String getName() {
         return name;
     }
