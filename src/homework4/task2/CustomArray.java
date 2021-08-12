@@ -43,20 +43,11 @@ public class CustomArray<E> {
     }
 
     public void add(E newItem) {
-        boolean check = true;
-        for (int i = 0; i < array.length; i++) {
-            if (!check) {
-                break;
-            }
-            if (array[i] == null) {
-                array[i] = newItem;
-                check = false;
-            }
-        }
-        if (check) {
+        if (size >= array.length) {
             array = Arrays.copyOf(array, array.length + 1);
-            array[array.length - 1] = newItem;
         }
+        array[size] = newItem;
+        size++;
     }
 
     public E get(int index) {
@@ -64,11 +55,11 @@ public class CustomArray<E> {
     }
 
     public E getLast() {
-        return array[array.length - 1];
+        return array[size - 1] != null ? array[size - 1]: null;
     }
 
     public E getFirst() {
-        return array[0];
+        return array[0] != null ? array[0]: null;
     }
 
     public E getLastFill() {
