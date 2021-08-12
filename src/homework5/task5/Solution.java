@@ -10,6 +10,7 @@ public class Solution {
     private final static String text = "Java — строго типизированный объектно-ориентированный язык программирования";
 
     public static void main(String[] args) {
+
         String[] str = text.split("");
         HashMap<Character, Integer> hashMap = new HashMap<>();
         int count = 0;

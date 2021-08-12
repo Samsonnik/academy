@@ -8,10 +8,10 @@ import java.util.Iterator;
 
 public class Solution {
     public static void main(String[] args) {
-        StudentsList studentsList = new StudentsList(20);
+        StudentsList studentsList = new StudentsList(8);
         studentsList.fillList();
         studentsList.printList();
-        System.out.println(studentsList.getMaxMark());
+        studentsList.printMaxMark();
     }
 }
 

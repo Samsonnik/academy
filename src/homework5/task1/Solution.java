@@ -13,8 +13,9 @@ public class Solution {
         arrayList.add(5.6);
         arrayList.add(5.7);
         arrayList.add(5.9);
+        arrayList.add(5.9);
         Set<?> set = rmDuplicates(arrayList);
-        set.forEach(System.out::println);
+        System.out.println(set);
     }
 
     public static Set<?> rmDuplicates(Collection<?> collection){

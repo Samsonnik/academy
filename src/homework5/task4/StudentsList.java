@@ -18,7 +18,7 @@ public class StudentsList {
         }
     }
 
-    public int getMaxMark() {
+    public void printMaxMark() {
 
         int maxMark = studentsList.get(0);
         Iterator<Integer> iterator = studentsList.iterator();
@@ -28,7 +28,7 @@ public class StudentsList {
                 maxMark = temp;
             }
         }
-        return maxMark;
+        System.out.println(maxMark);
     }
 
     public void printList(){
