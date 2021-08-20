@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Solution {
 
     static class DoublyLinkedListNode {
+
         public int data;
         public DoublyLinkedListNode next;
         public DoublyLinkedListNode prev;
@@ -35,6 +36,7 @@ public class Solution {
                 this.tail.next = node;
                 node.prev = this.tail;
             }
+
             this.tail = node;
         }
     }
@@ -51,17 +53,18 @@ public class Solution {
         }
     }
 
-    public static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
-        if (head == null) {
+    public static DoublyLinkedListNode reverse(DoublyLinkedList list) {
+
+        if (list.head == null){
             return null;
         }
 
         DoublyLinkedListNode prev = null;
-        while (head != null){
-            DoublyLinkedListNode next = head.next;
-            head.next = prev;
-            prev = head;
-            head = next;
+        while (list.head != null){
+            DoublyLinkedListNode next = list.head.next;
+            list.head.next = prev;
+            prev = list.head;
+            list.head = next;
         }
         return prev;
     }
@@ -70,21 +73,20 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
 
-        DoublyLinkedList list = new DoublyLinkedList();
+        DoublyLinkedList llist = new DoublyLinkedList();
 
-        int listCount = scanner.nextInt();
+        int llistCount = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        for (int i = 0; i < listCount; i++) {
-            int listItem = scanner.nextInt();
+        for (int i = 0; i < llistCount; i++) {
+            int llistItem = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            list.insertNode(listItem);
+            llist.insertNode(llistItem);
         }
+        DoublyLinkedListNode llist1 = reverse(llist);
 
-        DoublyLinkedListNode list1 = reverse(list.head);
-
-        printDoublyLinkedList(list1, " ");
+        printDoublyLinkedList(llist1, " ");
         scanner.close();
     }
 }
