@@ -58,7 +58,7 @@ public class Solution {
         }
     }
 
-// пример для тренировки
+// training
 
 //    public static User deSerialUser(File inputFile){
 //
