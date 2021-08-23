@@ -77,4 +77,9 @@ public class Phone extends Product{
         sb.append('}');
         return sb.toString();
     }
+
+    @Override
+    public int compareTo(Product product) {
+        return getName().compareTo(product.getName());
+    }
 }

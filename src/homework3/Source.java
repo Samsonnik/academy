@@ -27,15 +27,16 @@ public class Source {
         LocalDate dealDate = LocalDate.now();
         Deal deal = new Deal(products, seller, buyer, dealDate);
 
-        DateValidator.validate(seller.getDateOfBirth());
-        DateValidator.validate(buyer.getDateOfBirth());
-        System.out.println(belarusPhoneValidator.validate(seller.getPhone()));
-        System.out.println(americanPhoneValidator.validate(buyer.getPhone()));
-        System.out.println(emailValidator.validate(seller.getEmail()));
-        System.out.println(emailValidator.validate(buyer.getEmail()));
+//        DateValidator.validate(seller.getDateOfBirth());
+//        DateValidator.validate(buyer.getDateOfBirth());
+//        System.out.println(belarusPhoneValidator.validate(seller.getPhone()));
+//        System.out.println(americanPhoneValidator.validate(buyer.getPhone()));
+//        System.out.println(emailValidator.validate(seller.getEmail()));
+//        System.out.println(emailValidator.validate(buyer.getEmail()));
 
-        deal.getDealInfo();
-        firstPC.test();
+        deal.getSortProducts();
+
+
 
 
     }

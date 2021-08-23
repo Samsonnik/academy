@@ -1,8 +1,9 @@
 package homework3;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product>{
     protected String name;
     protected double price;
     protected Integer quantity;
@@ -50,6 +51,7 @@ public abstract class Product {
     public double averagePrice(){
         return (1 - discount()) * price * quantity;
     }
+
 
     @Override
     public boolean equals(Object o) {

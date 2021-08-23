@@ -57,6 +57,30 @@ public class Deal {
         System.out.printf("%-15s%-15s%-30s%-23s%-15s", buyer.getName(), buyer.getMoney(), buyer.getPhone(), buyer.getEmail(), buyer.getDateOfBirth());
     }
 
+    public void getReverseDealInfo() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Deal date: ").append(getDealDate());
+        System.out.println(stringBuilder);
+        stringBuilder.setLength(0);
+        stringBuilder.append("Dead line: ").append(getDealDeadLine());
+        System.out.println(stringBuilder);
+        System.out.printf("%-15s%-15s%-15s%-15s%-11s%n", "Products", "Category", "Quantity", "Price", "Average Price (with discount)");
+        System.out.println("_________________________________________________________________________________________");
+        for (int i = products.size() - 1; i >= 0; i--){
+            System.out.printf("%-15s%-15s%-15s%-15s%-11s%n", products.get(i).getName(), products.get(i).getClass().getSimpleName(),
+                    products.get(i).getQuantity(), products.get(i).getPrice(), products.get(i).averagePrice());
+        }
+        System.out.println("_________________________________________________________________________________________");
+        System.out.printf("Deal full price: %-43s%.1f %n", " ", getFullPrice());
+        stringBuilder.setLength(0);
+        stringBuilder.append("Seller/Buyer inf: ");
+        System.out.println(stringBuilder);
+        System.out.printf("%-15s%-15s%-30s%-23s%-15s%n", "User name", "Money", "Phone", "Email", "Birth date");
+        System.out.println("_________________________________________________________________________________________");
+        System.out.printf("%-15s%-15s%-30s%-23s%-15s%n", seller.getName(), seller.getMoney(), seller.getPhone(), seller.getEmail(), seller.getDateOfBirth());
+        System.out.printf("%-15s%-15s%-30s%-23s%-15s", buyer.getName(), buyer.getMoney(), buyer.getPhone(), buyer.getEmail(), buyer.getDateOfBirth());
+    }
+
         public LocalDate getDealDeadLine(){
         dealDeadLine = dealDate;
         return dealDeadLine.plusDays(10);
@@ -68,6 +92,13 @@ public class Deal {
             fullPrice += product.averagePrice();
         }
         return fullPrice;
+    }
+
+    public void getSortProducts(){
+        TreeSet<Product> set = new TreeSet<>(products);
+        for (Product product: set){
+            System.out.println(product.getName());
+        }
     }
 
     public User getSeller() {
@@ -94,6 +125,7 @@ public class Deal {
         this.dealDate = dealDate;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -118,4 +150,5 @@ public class Deal {
         sb.append('}');
         return sb.toString();
     }
+
 }
